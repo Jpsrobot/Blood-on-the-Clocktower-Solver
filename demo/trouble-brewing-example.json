@@ -1,0 +1,307 @@
+{
+  "schemaVersion": 2,
+  "playerCount": 9,
+  "playset": "trouble_brewing",
+  "night": 3,
+  "playerNames": {
+    "self": "",
+    "1L": "",
+    "2L": "",
+    "3L": "",
+    "4L": "",
+    "4R": "",
+    "3R": "",
+    "2R": "",
+    "1R": ""
+  },
+  "playerStatus": {
+    "self": {
+      "alive": true,
+      "deadVoteAvailable": true
+    },
+    "1L": {
+      "alive": false,
+      "deadVoteAvailable": true
+    },
+    "2L": {
+      "alive": false,
+      "deadVoteAvailable": true
+    },
+    "3L": {
+      "alive": false,
+      "deadVoteAvailable": true
+    },
+    "4L": {
+      "alive": true,
+      "deadVoteAvailable": true
+    },
+    "4R": {
+      "alive": true,
+      "deadVoteAvailable": true
+    },
+    "3R": {
+      "alive": true,
+      "deadVoteAvailable": true
+    },
+    "2R": {
+      "alive": true,
+      "deadVoteAvailable": true
+    },
+    "1R": {
+      "alive": true,
+      "deadVoteAvailable": true
+    }
+  },
+  "roleClaimLog": [
+    {
+      "id": 100,
+      "playerId": "1L",
+      "subject": {
+        "kind": "role",
+        "roleId": "washerwoman"
+      },
+      "claimType": "normal",
+      "origin": "manual",
+      "visibility": "public",
+      "recipients": [],
+      "when": "D1"
+    },
+    {
+      "id": 101,
+      "playerId": "2L",
+      "subject": {
+        "kind": "role",
+        "roleId": "fortune_teller"
+      },
+      "claimType": "normal",
+      "origin": "manual",
+      "visibility": "private",
+      "recipients": [
+        "self"
+      ],
+      "when": "D1"
+    },
+    {
+      "id": 102,
+      "playerId": "3L",
+      "subject": {
+        "kind": "role",
+        "roleId": "monk"
+      },
+      "claimType": "normal",
+      "origin": "manual",
+      "visibility": "private",
+      "recipients": [
+        "self"
+      ],
+      "when": "D1"
+    },
+    {
+      "id": 103,
+      "playerId": "4L",
+      "subject": {
+        "kind": "role",
+        "roleId": "virgin"
+      },
+      "claimType": "normal",
+      "origin": "manual",
+      "visibility": "public",
+      "recipients": [],
+      "when": "D1"
+    },
+    {
+      "id": 104,
+      "playerId": "4R",
+      "subject": {
+        "kind": "role",
+        "roleId": "recluse"
+      },
+      "claimType": "normal",
+      "origin": "manual",
+      "visibility": "public",
+      "recipients": [],
+      "when": "D1"
+    },
+    {
+      "id": 105,
+      "playerId": "3R",
+      "subject": {
+        "kind": "role",
+        "roleId": "undertaker"
+      },
+      "claimType": "normal",
+      "origin": "manual",
+      "visibility": "public",
+      "recipients": [],
+      "when": "D1"
+    },
+    {
+      "id": 106,
+      "playerId": "2R",
+      "subject": {
+        "kind": "role",
+        "roleId": "fortune_teller"
+      },
+      "claimType": "normal",
+      "origin": "manual",
+      "visibility": "public",
+      "recipients": [],
+      "when": "D1"
+    },
+    {
+      "id": 107,
+      "playerId": "1R",
+      "subject": {
+        "kind": "role",
+        "roleId": "soldier"
+      },
+      "claimType": "normal",
+      "origin": "manual",
+      "visibility": "public",
+      "recipients": [],
+      "when": "D1"
+    }
+  ],
+  "abilityClaimLog": [
+    {
+      "id": 600,
+      "playerId": "3R",
+      "sourcePlayerId": "3R",
+      "roleId": "undertaker",
+      "when": "N2",
+      "reportedWhen": "D2",
+      "targets": [
+        "1L"
+      ],
+      "result": null,
+      "structured": {
+        "kind": "roleReveal",
+        "player": "1L",
+        "shownRole": "imp"
+      },
+      "visibility": "public",
+      "recipients": []
+    },
+    {
+      "id": 610,
+      "playerId": "2R",
+      "sourcePlayerId": "2R",
+      "roleId": "fortune_teller",
+      "when": "N1",
+      "reportedWhen": "D1",
+      "targets": [
+        "1R",
+        "4L"
+      ],
+      "result": null,
+      "structured": {
+        "kind": "pairYesNo",
+        "players": [
+          "1R",
+          "4L"
+        ],
+        "result": "no"
+      },
+      "visibility": "public",
+      "recipients": []
+    }
+  ],
+  "deathLog": [
+    {
+      "id": 202,
+      "playerId": "1L",
+      "when": "D1",
+      "reason": "execution",
+      "isExecution": true,
+      "sourceRoleId": "virgin",
+      "sourcePlayerId": "4L",
+      "sourceEventId": 201
+    },
+    {
+      "id": 300,
+      "playerId": "3L",
+      "when": "N2",
+      "reason": "night_death"
+    },
+    {
+      "id": 400,
+      "playerId": "2L",
+      "when": "N3",
+      "reason": "night_death"
+    }
+  ],
+  "nominationLog": [
+    {
+      "id": 200,
+      "nominator": "1L",
+      "nominee": "4L",
+      "when": "D1",
+      "voters": [],
+      "votingOccurred": false,
+      "reason": "Virgin test"
+    }
+  ],
+  "abilityTriggerLog": [
+    {
+      "id": 201,
+      "roleId": "virgin",
+      "rolePlayerId": "4L",
+      "targetPlayerId": "1L",
+      "when": "D1",
+      "triggered": true,
+      "sourceEventId": 200
+    }
+  ],
+  "talkLog": [
+    {
+      "id": 150,
+      "participants": [
+        "1R",
+        "2R"
+      ],
+      "when": "D1",
+      "topic": null,
+      "details": null
+    }
+  ],
+  "selfRole": {
+    "shownRole": "empath"
+  },
+  "selfInfoLog": [
+    {
+      "id": 501,
+      "roleId": "empath",
+      "when": "N1",
+      "number": 1
+    },
+    {
+      "id": 502,
+      "roleId": "empath",
+      "when": "N2",
+      "number": 1
+    },
+    {
+      "id": 503,
+      "roleId": "empath",
+      "when": "N3",
+      "number": 1
+    }
+  ],
+  "selfActionLog": [],
+  "manualReads": {
+    "4L": {
+      "playerId": "4L",
+      "roleId": "scarlet_woman",
+      "alignment": "evil",
+      "note": "Old read before the public Virgin test; intentionally left to demonstrate yellow.",
+      "updatedAt": 120
+    }
+  },
+  "completedNights": [
+    2,
+    3
+  ],
+  "noExecutionDays": [
+    2
+  ]
+}

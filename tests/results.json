@@ -1,0 +1,1634 @@
+{
+  "passed": 407,
+  "total": 407,
+  "tests": [
+    {
+      "name": "Seat ring and counts for every supported game size",
+      "passed": true
+    },
+    {
+      "name": "15-player Baron setup is 7/4/3/1",
+      "passed": true
+    },
+    {
+      "name": "Living neighbours bridge deaths and wrap correctly",
+      "passed": true
+    },
+    {
+      "name": "Registration directions are constrained",
+      "passed": true
+    },
+    {
+      "name": "Chef registration varies per PAIR, not one global alignment",
+      "passed": true
+    },
+    {
+      "name": "Character role and team alignment are independent",
+      "passed": true
+    },
+    {
+      "name": "Fortune Teller detects dead Imp",
+      "passed": true
+    },
+    {
+      "name": "Fortune Teller red herring stays a positive even when dead",
+      "passed": true
+    },
+    {
+      "name": "Recluse can register either way to Fortune Teller",
+      "passed": true
+    },
+    {
+      "name": "Poisoned Recluse cannot supply optional positive",
+      "passed": true
+    },
+    {
+      "name": "Undertaker may read executed Recluse as Imp",
+      "passed": true
+    },
+    {
+      "name": "Drunk is revealed as Drunk, not as believed Townsfolk",
+      "passed": true
+    },
+    {
+      "name": "Legal setup requires unique roles",
+      "passed": true
+    },
+    {
+      "name": "Own shown Townsfolk can be Drunk, but token cannot duplicate actual role",
+      "passed": true
+    },
+    {
+      "name": "Claims alone never exclude a legal good bluff world",
+      "passed": true
+    },
+    {
+      "name": "FT red herring must be consistent across nights",
+      "passed": true
+    },
+    {
+      "name": "Poison can rescue a changing direct FT reading",
+      "passed": true
+    },
+    {
+      "name": "Poison does not imply the received answer must be false",
+      "passed": true
+    },
+    {
+      "name": "Drunk direct inconsistent readings are observations, not truth",
+      "passed": true
+    },
+    {
+      "name": "Different players cannot both be poisoned on the same cycle",
+      "passed": true
+    },
+    {
+      "name": "Failed Slayer shot does not confirm shooter or target",
+      "passed": true
+    },
+    {
+      "name": "Slayer miss on actual Imp requires impaired/spent/fake shooter",
+      "passed": true
+    },
+    {
+      "name": "Successful Slayer can kill Recluse",
+      "passed": true
+    },
+    {
+      "name": "Virgin first nomination by Townsfolk must trigger if healthy",
+      "passed": true
+    },
+    {
+      "name": "Failed first Virgin test uses the ability",
+      "passed": true
+    },
+    {
+      "name": "Spy may trigger Virgin but stays evil",
+      "passed": true
+    },
+    {
+      "name": "Virgin death counts as execution for Undertaker",
+      "passed": true
+    },
+    {
+      "name": "Scarlet Woman takes over when Imp is executed with FIVE alive before death",
+      "passed": true
+    },
+    {
+      "name": "Scarlet Woman does NOT save executed Imp with FOUR alive",
+      "passed": true
+    },
+    {
+      "name": "Imp night self-kill can pass to a living minion",
+      "passed": true
+    },
+    {
+      "name": "Poison effect ends when Poisoner becomes Imp",
+      "passed": true
+    },
+    {
+      "name": "Healthy Saint execution cannot allow another night",
+      "passed": true
+    },
+    {
+      "name": "Soldier cannot die to ordinary Imp attack while healthy",
+      "passed": true
+    },
+    {
+      "name": "Monk chosen protection is conditional on being genuine and healthy",
+      "passed": true
+    },
+    {
+      "name": "Missing night death is not automatically a confirmed no-kill night",
+      "passed": true
+    },
+    {
+      "name": "On a completed night Imp can target an already dead player",
+      "passed": true
+    },
+    {
+      "name": "Own dead vote is consumed, living vote is not",
+      "passed": true
+    },
+    {
+      "name": "Virgin event before voting consumes NO ghost votes",
+      "passed": true
+    },
+    {
+      "name": "Historical role claim uses occurrence time, not time entered",
+      "passed": true
+    },
+    {
+      "name": "Repeated relayed info, even swapped pair order, is one observation",
+      "passed": true
+    },
+    {
+      "name": "Saint claim alone adds no evil points",
+      "passed": true
+    },
+    {
+      "name": "Unknown conversation alone adds no evil or good points",
+      "passed": true
+    },
+    {
+      "name": "Failed Virgin test alone adds no evil points",
+      "passed": true
+    },
+    {
+      "name": "Manual read does not feed back into scoring",
+      "passed": true
+    },
+    {
+      "name": "Deleting linked Virgin nomination removes trigger and execution atomically",
+      "passed": true
+    },
+    {
+      "name": "Malformed import is rejected; proper snapshot accepted",
+      "passed": true
+    },
+    {
+      "name": "Barely explored samples never cause red/blue/green confidence warnings",
+      "passed": true
+    },
+    {
+      "name": "Sparse data nomination guidance stays HOLD",
+      "passed": true
+    },
+    {
+      "name": "Sampler returns bounded exploratory shares, not proof flags",
+      "passed": true
+    },
+    {
+      "name": "Import rejects unknown participant ids",
+      "passed": true
+    },
+    {
+      "name": "Import rejects duplicate event ids",
+      "passed": true
+    },
+    {
+      "name": "Dead poisoned information character cannot receive later nightly info",
+      "passed": true
+    },
+    {
+      "name": "Dead Drunk cannot keep receiving fake recurring info",
+      "passed": true
+    },
+    {
+      "name": "Drunk has one fixed believed character, not a different one each report",
+      "passed": true
+    },
+    {
+      "name": "Two living players with a Demon cannot continue to another night",
+      "passed": true
+    },
+    {
+      "name": "Public proof can flag contradictory manual read without sampling",
+      "passed": true
+    },
+    {
+      "name": "Demon mode locks self, known Minion seats, exact teammate roles, and Storyteller bluffs",
+      "passed": true
+    },
+    {
+      "name": "Demon attack record constrains ordinary night death to the selected target",
+      "passed": true
+    },
+    {
+      "name": "Demon may deliberately sink a kill into an already-dead player",
+      "passed": true
+    },
+    {
+      "name": "Imp self-kill with a healthy Scarlet Woman passes to Scarlet Woman first",
+      "passed": true
+    },
+    {
+      "name": "Demon-state import rejects a non-Minion exact teammate role",
+      "passed": true
+    },
+    {
+      "name": "Minion mode locks self, known Demon, fellow Minions, and shared ST bluffs",
+      "passed": true
+    },
+    {
+      "name": "Own Poisoner action fixes that nights poison target and produces a direct green marker",
+      "passed": true
+    },
+    {
+      "name": "A mismatching Spy Grimoire remains possible only through Spy poisoning",
+      "passed": true
+    },
+    {
+      "name": "Healthy Spy poison reminder matches the real poison target, but a poisoned Spy can be misinformed",
+      "passed": true
+    },
+    {
+      "name": "Scarlet Woman takeover can be recorded as direct self Demon succession",
+      "passed": true
+    },
+    {
+      "name": "Minion-state import rejects self as known Demon and non-Minion teammate roles",
+      "passed": true
+    },
+    {
+      "name": "Spy opponent projection strips private evil knowledge and self-only whispers",
+      "passed": true
+    },
+    {
+      "name": "Spy bluff advisor ranks only good roles and returns a collision-aware recommendation",
+      "passed": true
+    },
+    {
+      "name": "Direct Exorcist no-death choice adds suspicion to the chosen player",
+      "passed": true
+    },
+    {
+      "name": "Reported Exorcist repeated target is flagged as inconsistent",
+      "passed": true
+    },
+    {
+      "name": "Mastermind risk is surfaced after an execution followed by a completed no-death night",
+      "passed": true
+    },
+    {
+      "name": "Snapshot validation accepts a direct self Exorcist action",
+      "passed": true
+    },
+    {
+      "name": "BMR protection tags distinguish general death prevention from execution-death prevention",
+      "passed": true
+    },
+    {
+      "name": "Revival returns a dead player to alive status",
+      "passed": true
+    },
+    {
+      "name": "A revived player can die again later",
+      "passed": true
+    },
+    {
+      "name": "Pit-Hag metadata marks character-changing night targeting",
+      "passed": true
+    },
+    {
+      "name": "Snapshot validation accepts Pit-Hag transformations only from N2 onward",
+      "passed": true
+    },
+    {
+      "name": "Direct Pit-Hag action changes character but preserves alignment",
+      "passed": true
+    },
+    {
+      "name": "Pit-Hag Demon creation makes that nights deaths arbitrary",
+      "passed": true
+    },
+    {
+      "name": "Empath repeating the same result on different nights is not an input conflict",
+      "passed": true
+    },
+    {
+      "name": "Empath changed read with stable neighbours creates impairment signal",
+      "passed": true
+    },
+    {
+      "name": "Nearby neighbour death prevents Empath stable-neighbour impairment signal",
+      "passed": true
+    },
+    {
+      "name": "Empath stable-neighbour shift rewards Drunk or poison explanations",
+      "passed": true
+    },
+    {
+      "name": "Fortune Teller treats any Demon character as a positive, not only Imp",
+      "passed": true
+    },
+    {
+      "name": "Goblin is available to custom scripts as an execution-risk Minion",
+      "passed": true
+    },
+    {
+      "name": "Spy 2.1 advisor supplies fake info and frames a known Saint while protecting the Demon seat",
+      "passed": true
+    },
+    {
+      "name": "S&V phase 1 information tags are active",
+      "passed": true
+    },
+    {
+      "name": "Clockmaker checks shortest Demon-to-Minion distance",
+      "passed": true
+    },
+    {
+      "name": "Dreamer requires the target character plus one opposite character-side token",
+      "passed": true
+    },
+    {
+      "name": "Flowergirl reads whether any Demon voted on the previous day",
+      "passed": true
+    },
+    {
+      "name": "Town Crier reads whether a Minion nominated on the previous day",
+      "passed": true
+    },
+    {
+      "name": "Oracle counts dead evil-aligned players, not nominal evil character types",
+      "passed": true
+    },
+    {
+      "name": "Seamstress compares actual alignment independently of character",
+      "passed": true
+    },
+    {
+      "name": "Snapshot validation accepts new S&V structured information records",
+      "passed": true
+    },
+    {
+      "name": "S&V Townsfolk and Outsider implementation cutoff is explicit",
+      "passed": true
+    },
+    {
+      "name": "Healthy Snake Charmer must swap after choosing a living Demon",
+      "passed": true
+    },
+    {
+      "name": "Snake Charmer swaps character and alignment and poisons the old Demon permanently",
+      "passed": true
+    },
+    {
+      "name": "Flowergirl evaluates the previous day before a Night-2 Snake Charmer swap",
+      "passed": true
+    },
+    {
+      "name": "Healthy Savant requires exactly one of the two entered statements to be true",
+      "passed": true
+    },
+    {
+      "name": "Savant selected-player statement checks only the selected group",
+      "passed": true
+    },
+    {
+      "name": "Mathematician counts a poisoned Soldier dying to the Demon as one abnormal player",
+      "passed": true
+    },
+    {
+      "name": "Mathematician can identify false poisoned information without counting poisoning by itself",
+      "passed": true
+    },
+    {
+      "name": "Snapshot validation accepts Mathematician, Savant, and Snake Charmer records through the Seamstress cutoff",
+      "passed": true
+    },
+    {
+      "name": "Healthy Philosopher gains a good ability and makes its in-play holder drunk",
+      "passed": true
+    },
+    {
+      "name": "Philosopher can receive a gained first-night ability on the night it is chosen",
+      "passed": true
+    },
+    {
+      "name": "Artist records a timed yes-no question without pretending to parse natural language",
+      "passed": true
+    },
+    {
+      "name": "Juggler counts exact public player-character guesses from the previous day",
+      "passed": true
+    },
+    {
+      "name": "Sage information requires a Demon kill and contains the Demon in the shown pair",
+      "passed": true
+    },
+    {
+      "name": "Mutant madness execution marker is only legal for a healthy Mutant ability",
+      "passed": true
+    },
+    {
+      "name": "Sweetheart death creates persistent drunkenness",
+      "passed": true
+    },
+    {
+      "name": "Barber death records an unresolved character-swap window without changing alignment",
+      "passed": true
+    },
+    {
+      "name": "Healthy Klutz loses immediately after choosing an evil living player",
+      "passed": true
+    },
+    {
+      "name": "Snapshot validation accepts the new Townsfolk and Outsider records",
+      "passed": true
+    },
+    {
+      "name": "S&V Demon setup modifiers apply before world validation",
+      "passed": true
+    },
+    {
+      "name": "OUTSIDER_COUNT_MODIFIER metadata drives Baron, Fang Gu, and Vigormortis setup counts",
+      "passed": true
+    },
+    {
+      "name": "Outsider claim-behaviour tags distinguish early, hidden, and neutral roles",
+      "passed": true
+    },
+    {
+      "name": "Baron is heavily downweighted when its extra Outsiders would force missing early claims",
+      "passed": true
+    },
+    {
+      "name": "The one-Saint eight-player example no longer produces a high Baron share",
+      "passed": true
+    },
+    {
+      "name": "Incomplete role-claim coverage does not punish a count modifier for missing early claims",
+      "passed": true
+    },
+    {
+      "name": "Hidden or neutral Outsiders do not fake Vigormortis count evidence",
+      "passed": true
+    },
+    {
+      "name": "Vigormortis gets weak support only when it removes a normally forced early-claim Outsider",
+      "passed": true
+    },
+    {
+      "name": "Fang Gu first Outsider kill jumps, changes alignment, and kills the old Demon instead",
+      "passed": true
+    },
+    {
+      "name": "Fang Gu cannot record the first healthy Outsider target as the player who died",
+      "passed": true
+    },
+    {
+      "name": "No Dashii poisons the nearest Townsfolk on each side and skips non-Townsfolk",
+      "passed": true
+    },
+    {
+      "name": "No Dashii nearest-Townsfolk search does not skip dead Townsfolk",
+      "passed": true
+    },
+    {
+      "name": "Vigormortis killing a Minion preserves the Minion character and creates one directional poison source",
+      "passed": true
+    },
+    {
+      "name": "Vortox requires healthy Townsfolk information to be false",
+      "passed": true
+    },
+    {
+      "name": "Vortox false-information rule overrides Sweetheart drunkenness on Townsfolk",
+      "passed": true
+    },
+    {
+      "name": "Vortox ends the game at dusk when nobody was executed that day",
+      "passed": true
+    },
+    {
+      "name": "Vortox Savant information has both statements false while healthy",
+      "passed": true
+    },
+    {
+      "name": "Snapshot validation accepts S&V Demon attack logs and rejects unrelated Demon IDs",
+      "passed": true
+    },
+    {
+      "name": "Evil Twin direct setup info locks the good Twin character",
+      "passed": true
+    },
+    {
+      "name": "Executing the healthy good Twin ends the game for evil",
+      "passed": true
+    },
+    {
+      "name": "Living Evil Twin pair blocks good victory when the Demon dies",
+      "passed": true
+    },
+    {
+      "name": "Healthy Witch curse must kill its cursed nominator while more than three live",
+      "passed": true
+    },
+    {
+      "name": "Cerenovus madness execution requires the matching healthy nightly choice",
+      "passed": true
+    },
+    {
+      "name": "Vigormortis-killed Pit-Hag keeps acting while the Vigormortis ability remains active",
+      "passed": true
+    },
+    {
+      "name": "Evil opponent projection removes secret Twin and team information",
+      "passed": true
+    },
+    {
+      "name": "Cerenovus strategy prioritizes targets already evil-looking to town",
+      "passed": true
+    },
+    {
+      "name": "Pit-Hag strategy uses current-world role presence when estimating success",
+      "passed": true
+    },
+    {
+      "name": "Deleting a resolved Witch or Cerenovus action also removes its linked death",
+      "passed": true
+    },
+    {
+      "name": "Snapshot validation accepts Evil Twin, Witch, Cerenovus, and Pit-Hag Minion records",
+      "passed": true
+    },
+    {
+      "name": "Travellers stay outside normal setup counts and role IDs",
+      "passed": true
+    },
+    {
+      "name": "Bureaucrat and Thief combine to a signed triple-negative vote",
+      "passed": true
+    },
+    {
+      "name": "Bureaucrat and Thief targets reset between days",
+      "passed": true
+    },
+    {
+      "name": "Beggar donation permanently consumes the donor dead vote in rebuilt status",
+      "passed": true
+    },
+    {
+      "name": "Scapegoat replacement pulls Traveller alignment toward the saved player",
+      "passed": true
+    },
+    {
+      "name": "Known Traveller alignment overrides behavioural estimates",
+      "passed": true
+    },
+    {
+      "name": "Traveller votes do not count as Demon votes for Flowergirl",
+      "passed": true
+    },
+    {
+      "name": "Exiled Traveller keeps exactly one dead vote and loses active abilities",
+      "passed": true
+    },
+    {
+      "name": "All BMR and S&V Travellers stay outside normal role IDs and setup counts",
+      "passed": true
+    },
+    {
+      "name": "Matron seat swaps alter the historical seating order without changing player identity",
+      "passed": true
+    },
+    {
+      "name": "Voudon lets dead Travellers vote repeatedly while blocking other living Travellers",
+      "passed": true
+    },
+    {
+      "name": "Apprentice copied ability determines its exact alignment estimate",
+      "passed": true
+    },
+    {
+      "name": "Barista sober-and-healthy forces literal true Townsfolk information even under Vortox",
+      "passed": true
+    },
+    {
+      "name": "Bone Collector temporarily restores a dead information ability through dusk",
+      "passed": true
+    },
+    {
+      "name": "Deviant funny judgement and new Traveller action records survive snapshot validation",
+      "passed": true
+    },
+    {
+      "name": "Judge, Bishop, and Butcher nomination records remain valid save data",
+      "passed": true
+    },
+    {
+      "name": "Experimental Travellers are available in the unrestricted Traveller catalog",
+      "passed": true
+    },
+    {
+      "name": "Cacklejack recorded character change updates the seated world without changing alignment",
+      "passed": true
+    },
+    {
+      "name": "Gnome and Gangster deaths remain distinct special death causes",
+      "passed": true
+    },
+    {
+      "name": "Gnome same-alignment friend informs Traveller alignment estimate",
+      "passed": true
+    },
+    {
+      "name": "Experimental Acrobat, Alchemist, Alsaahir, and Amnesiac are custom-script only",
+      "passed": true
+    },
+    {
+      "name": "Healthy Acrobat dies after choosing the Drunk character",
+      "passed": true
+    },
+    {
+      "name": "Poisoned Acrobat may survive even when choosing an impaired player",
+      "passed": true
+    },
+    {
+      "name": "Alchemist copied setup Minion ability modifies setup and can stack with the real Minion",
+      "passed": true
+    },
+    {
+      "name": "Healthy Alsaahir exact guess must be recorded as a win",
+      "passed": true
+    },
+    {
+      "name": "Amnesiac tag answers and locked Townsfolk hypothesis survive validation",
+      "passed": true
+    },
+    {
+      "name": "Phase-2 experimental Townsfolk are custom-script only and preserve requested symbols",
+      "passed": true
+    },
+    {
+      "name": "Balloonist setup supports both normal and plus-one Outsider distributions",
+      "passed": true
+    },
+    {
+      "name": "Healthy Balloonist requires a different character type on consecutive nights",
+      "passed": true
+    },
+    {
+      "name": "Vortox makes healthy Balloonist information false by allowing the same type",
+      "passed": true
+    },
+    {
+      "name": "Banshee Demon kill activates double voting without consuming its dead vote",
+      "passed": true
+    },
+    {
+      "name": "Bounty Hunter creates exactly one evil Townsfolk and its information identifies one",
+      "passed": true
+    },
+    {
+      "name": "Bounty Hunter only learns again after the previously shown player dies and never repeats them",
+      "passed": true
+    },
+    {
+      "name": "Cannibal inherits an executed good Monk ability and can protect the next Demon target",
+      "passed": true
+    },
+    {
+      "name": "Experimental phase 3: all seven symbols and roles only in custom scripts",
+      "passed": true
+    },
+    {
+      "name": "Choirboy setup requires King and script snapshot includes King",
+      "passed": true
+    },
+    {
+      "name": "Choirboy sees the Demon player only when a Demon kills King",
+      "passed": true
+    },
+    {
+      "name": "Demon known King seat is a hard setup constraint, not an evil alignment",
+      "passed": true
+    },
+    {
+      "name": "King learns a living character only after dead >= living",
+      "passed": true
+    },
+    {
+      "name": "King can learn an outsider character via a living healthy Spy registration",
+      "passed": true
+    },
+    {
+      "name": "Vortox cannot make King wake before the death threshold",
+      "passed": true
+    },
+    {
+      "name": "Demon known King is used as a direct sampler lock",
+      "passed": true
+    },
+    {
+      "name": "Engineer transforms Demon with its original team alignment and no retroactive setup",
+      "passed": true
+    },
+    {
+      "name": "Engineer can replace existing Minion and may be used only once",
+      "passed": true
+    },
+    {
+      "name": "Farmer night-death converts exactly one surviving good player",
+      "passed": true
+    },
+    {
+      "name": "Farmer transforms again when a newly-created Farmer dies at night",
+      "passed": true
+    },
+    {
+      "name": "Fisherman, General and High Priestess are recorded without treating ST judgement as objective proof",
+      "passed": true
+    },
+    {
+      "name": "New role payload validation rejects malformed advice, King roles, and Engineer targets",
+      "passed": true
+    },
+    {
+      "name": "Experimental phase 4 symbols, types, and custom-only catalog",
+      "passed": true
+    },
+    {
+      "name": "Huntsman setup forces Damsel with an optional extra Outsider",
+      "passed": true
+    },
+    {
+      "name": "Huntsman converts chosen healthy Damsel to an out-of-play Townsfolk once",
+      "passed": true
+    },
+    {
+      "name": "Huntsman misses do not transform other players and rescue cannot name in-play Townsfolk",
+      "passed": true
+    },
+    {
+      "name": "Knight information excludes the Demon; Vortox requires a false pair",
+      "passed": true
+    },
+    {
+      "name": "Noble gets exactly one evil, with Spy and Recluse registrations",
+      "passed": true
+    },
+    {
+      "name": "Knight/Noble/Pixie first-night structured information validates",
+      "passed": true
+    },
+    {
+      "name": "Magician is shown among extra Minions but remains good",
+      "passed": true
+    },
+    {
+      "name": "Minion Magician introduction leaves two Demon candidates, one is Magician",
+      "passed": true
+    },
+    {
+      "name": "Nightwatchman chooses one recipient once, without forcing alignment",
+      "passed": true
+    },
+    {
+      "name": "Lycanthrope can kill a good target and suppress the Demon night kill",
+      "passed": true
+    },
+    {
+      "name": "Lycanthrope cannot kill actual evil and never acts on N1",
+      "passed": true
+    },
+    {
+      "name": "Pixie first-night result refers to another in-play Townsfolk",
+      "passed": true
+    },
+    {
+      "name": "Pixie gains seen ability after holder dies only with Storyteller confirmation",
+      "passed": true
+    },
+    {
+      "name": "Damsel correctly guessed by a Minion ends game for evil",
+      "passed": true
+    },
+    {
+      "name": "Damsel guess fails against another character or with Spy jinx",
+      "passed": true
+    },
+    {
+      "name": "Lycanthrope Faux Paw makes a good player register as evil without joining evil",
+      "passed": true
+    },
+    {
+      "name": "Faux Paw is stable across a candidate history and informs an N1 Noble reading",
+      "passed": true
+    },
+    {
+      "name": "Multiple same-night Lycanthrope and Damsel guess actions cannot be silently ignored",
+      "passed": true
+    },
+    {
+      "name": "Phase-5 experimental Townsfolk are custom-only with consistent display symbols",
+      "passed": true
+    },
+    {
+      "name": "Steward recognizes a good player, not the Imp, and Spy can register good",
+      "passed": true
+    },
+    {
+      "name": "Shugenja uses circular seat order including wrap-around",
+      "passed": true
+    },
+    {
+      "name": "Shugenja chooses either direction on a tie",
+      "passed": true
+    },
+    {
+      "name": "Shugenja and Village Idiot reported-information imports validate",
+      "passed": true
+    },
+    {
+      "name": "Village Idiot allows two or three exact-role copies and rejects other duplicated Townsfolk",
+      "passed": true
+    },
+    {
+      "name": "Village Idiot has exactly one permanently drunk copy when there are two",
+      "passed": true
+    },
+    {
+      "name": "A lone Village Idiot cannot give wrong information when healthy",
+      "passed": true
+    },
+    {
+      "name": "Poppy Grower blocks the original team introduction",
+      "passed": true
+    },
+    {
+      "name": "Poppy Grower death by day reveals the evil team the following night",
+      "passed": true
+    },
+    {
+      "name": "Poppy Grower delayed-introduction metadata must contain a valid night",
+      "passed": true
+    },
+    {
+      "name": "Preacher choosing Poisoner prevents all its poison choices that night",
+      "passed": true
+    },
+    {
+      "name": "Preacher choice of an innocent does not suppress Poisoner",
+      "passed": true
+    },
+    {
+      "name": "A dead Preacher releases suppressed Poisoner on a later night",
+      "passed": true
+    },
+    {
+      "name": "Preacher can make one distinct choice every night and cannot duplicate a night",
+      "passed": true
+    },
+    {
+      "name": "A healthy Preacher blocks the Scarlet Woman from succeeding the executed Imp",
+      "passed": true
+    },
+    {
+      "name": "Preached Spy cannot register good to another Townsfolk while suppressed",
+      "passed": true
+    },
+    {
+      "name": "Princess prevents a Demon killing a chosen living target on N2",
+      "passed": true
+    },
+    {
+      "name": "Princess suppression does not forbid explicitly non-Demon night deaths",
+      "passed": true
+    },
+    {
+      "name": "Princess first-day execution action requires matching recorded nomination and execution",
+      "passed": true
+    },
+    {
+      "name": "Princess may stop the Demon after an execution where the nominee survives",
+      "passed": true
+    },
+    {
+      "name": "Princess first-day ability fails when used on Day 2 without becoming Princess later",
+      "passed": true
+    },
+    {
+      "name": "Phase 6 Demons are script-maker-only with Japanese labels and symbols",
+      "passed": true
+    },
+    {
+      "name": "Lord of Typhon adds one Minion and supports arbitrary Outsider numbers",
+      "passed": true
+    },
+    {
+      "name": "Typhon is between contiguous Minions and invalid off-line placements are rejected",
+      "passed": true
+    },
+    {
+      "name": "Typhon at seven players requires both adjacent Minions",
+      "passed": true
+    },
+    {
+      "name": "Typhon generated assignments have one extra Minion and a valid seat line",
+      "passed": true
+    },
+    {
+      "name": "Typhon additional independent Minion claimers increase only heuristic likelihood",
+      "passed": true
+    },
+    {
+      "name": "Lord self-player role predictions are only notes, not role locks",
+      "passed": true
+    },
+    {
+      "name": "Lord known 3 Minions and attack actions survive imported snapshots",
+      "passed": true
+    },
+    {
+      "name": "Kazali keeps standard Minion count and variable Outsiders",
+      "passed": true
+    },
+    {
+      "name": "Kazali selected Minion identities can be fixed on arbitrary seats",
+      "passed": true
+    },
+    {
+      "name": "Kazali outsider surplus is supportive but not a hard deduction",
+      "passed": true
+    },
+    {
+      "name": "Legion generated worlds have Demon majority, duplicate role, and no Minions",
+      "passed": true
+    },
+    {
+      "name": "Legion allies are hard locks and invalid ally records are rejected",
+      "passed": true
+    },
+    {
+      "name": "Legion can register as a Minion, unlike normal Demons",
+      "passed": true
+    },
+    {
+      "name": "Legion 0-vote large voting bloc boosts its weak heuristic weight",
+      "passed": true
+    },
+    {
+      "name": "Legion missing reported information modestly increases odds",
+      "passed": true
+    },
+    {
+      "name": "Leviathan stays impossible until explicitly confirmed on the reasoning screen",
+      "passed": true
+    },
+    {
+      "name": "A checked Leviathan restricts the whole sample to Leviathan worlds",
+      "passed": true
+    },
+    {
+      "name": "Leviathan wins after two good executions and never chooses a night kill",
+      "passed": true
+    },
+    {
+      "name": "Leviathan world reaching sixth day is resolved as evil victory",
+      "passed": true
+    },
+    {
+      "name": "Special Demon mode results and conditional Legion ranking are produced",
+      "passed": true
+    },
+    {
+      "name": "Leviathan counts good executions where the player survives",
+      "passed": true
+    },
+    {
+      "name": "Leviathan does not double-count nonlethal marker and actual death",
+      "passed": true
+    },
+    {
+      "name": "An observed nonlethal execution cannot be marked as no execution day",
+      "passed": true
+    },
+    {
+      "name": "Legion executions fail when every recorded voter is Legion",
+      "passed": true
+    },
+    {
+      "name": "Legion does not infer exclusively evil voting when no voters were entered",
+      "passed": true
+    },
+    {
+      "name": "Phase 7 experimental Demons are Japanese-labeled and custom-script only",
+      "passed": true
+    },
+    {
+      "name": "Al-Hadikhia only enters candidate worlds when explicitly confirmed",
+      "passed": true
+    },
+    {
+      "name": "Confirmed Al-Hadikhia restricts random assignments to that Demon",
+      "passed": true
+    },
+    {
+      "name": "Riot publicly confirmed games restrict setup to Riot",
+      "passed": true
+    },
+    {
+      "name": "Riot converts Minions into Riots on the third day, not earlier",
+      "passed": true
+    },
+    {
+      "name": "Confirmed Riot has separate conditional seat weights on the third day",
+      "passed": true
+    },
+    {
+      "name": "Lil Monsta keeps the standard visible Demon slot but grants an underlying Minion ability",
+      "passed": true
+    },
+    {
+      "name": "Lil Monsta can change the Demon-registration seat from night to night",
+      "passed": true
+    },
+    {
+      "name": "Excess Minion reports and changing Demon pings favour Lil Monsta weakly",
+      "passed": true
+    },
+    {
+      "name": "Lleech selects a fixed permanently poisoned host",
+      "passed": true
+    },
+    {
+      "name": "Healthy Lleech cannot die while its chosen host remains alive",
+      "passed": true
+    },
+    {
+      "name": "Killing Lleech host also kills the Lleech and concludes the game",
+      "passed": true
+    },
+    {
+      "name": "Lleech host notes validate and disallow self-hosting",
+      "passed": true
+    },
+    {
+      "name": "Ojo selects a character, not a player",
+      "passed": true
+    },
+    {
+      "name": "Early undisclosed continuous-information deaths support Ojo and Spy weakly",
+      "passed": true
+    },
+    {
+      "name": "Yaggababble gets only a weak multiple-night-kills indicator",
+      "passed": true
+    },
+    {
+      "name": "Two incompatible announced Demon modes cannot both be confirmed in a save",
+      "passed": true
+    },
+    {
+      "name": "A Riot nominee who dies can continue the Day-3 nomination chain",
+      "passed": true
+    },
+    {
+      "name": "Phase 8 Minions have Japanese glyphs and are custom-script-only",
+      "passed": true
+    },
+    {
+      "name": "Marionette can occupy either Demon neighbour",
+      "passed": true
+    },
+    {
+      "name": "Nonadjacent Marionette is not a legal world",
+      "passed": true
+    },
+    {
+      "name": "Demon knowledge of Marionette acts as a direct seat lock",
+      "passed": true
+    },
+    {
+      "name": "A Marionette can see an unused Townsfolk token without changing evil alignment",
+      "passed": true
+    },
+    {
+      "name": "A Marionette token cannot duplicate a genuine in-play role",
+      "passed": true
+    },
+    {
+      "name": "Marionette contradictory public role claim remains a bluff, not impossible reality",
+      "passed": true
+    },
+    {
+      "name": "Boffin can grant a not-in-play good ability to the Demon",
+      "passed": true
+    },
+    {
+      "name": "Boffin cannot grant a good ability that is actually in play",
+      "passed": true
+    },
+    {
+      "name": "Boffin possibilities cannot be narrowed away by standard Slayer confirmation",
+      "passed": true
+    },
+    {
+      "name": "Without Boffin, successful Slayer retains a hard role confirmation",
+      "passed": true
+    },
+    {
+      "name": "Boffin-gifted Virgin can produce a public trigger from a Demon",
+      "passed": true
+    },
+    {
+      "name": "Fearmonger warning checkbox reduces execution enthusiasm without proving role",
+      "passed": true
+    },
+    {
+      "name": "Boomdandy public claim warns against executions",
+      "passed": true
+    },
+    {
+      "name": "Boomdandy explosion record preserves 3 survivors and mass death",
+      "passed": true
+    },
+    {
+      "name": "Boomdandy explosion cannot leave a Demon outside the survivors",
+      "passed": true
+    },
+    {
+      "name": "Invalid Boomdandy survivor count fails import validation",
+      "passed": true
+    },
+    {
+      "name": "Harpy victim report can be saved without becoming a Harpy role claim",
+      "passed": true
+    },
+    {
+      "name": "Invalid Harpy victim report (self-accusation) is rejected",
+      "passed": true
+    },
+    {
+      "name": "Harpy selected pair enables either target to die during the day",
+      "passed": true
+    },
+    {
+      "name": "Fearmonger own successful execution ends the game for the chosen team",
+      "passed": true
+    },
+    {
+      "name": "A plain prior save remains valid without the new phase 8 fields",
+      "passed": true
+    },
+    {
+      "name": "Boomdandy can explode even when the execution does not kill it",
+      "passed": true
+    },
+    {
+      "name": "Fearmonger warning combines with Goblin risk for a marked target",
+      "passed": true
+    },
+    {
+      "name": "Sampler explores normal Marionette assignments without locking hidden evil to good",
+      "passed": true
+    },
+    {
+      "name": "Eight phase-9 Minions are custom-script roles with stable kanji",
+      "passed": true
+    },
+    {
+      "name": "Summoner setup contains no starting Demon, one more Townsfolk",
+      "passed": true
+    },
+    {
+      "name": "Summoner setup preserves Baron changes to Outsider count",
+      "passed": true
+    },
+    {
+      "name": "Summoner sampler produces valid Demon-less starting worlds",
+      "passed": true
+    },
+    {
+      "name": "Summoner N3 creates recorded evil Demon without a starting Demon",
+      "passed": true
+    },
+    {
+      "name": "Summoner death before N3 ends the no-Demon scenario",
+      "passed": true
+    },
+    {
+      "name": "Mezepheles turns a chosen good player evil at the following night",
+      "passed": true
+    },
+    {
+      "name": "Mezepheles cannot convert an already-evil player",
+      "passed": true
+    },
+    {
+      "name": "Widow poisoned player and notification records survive import",
+      "passed": true
+    },
+    {
+      "name": "Xaan poison on Night X explains otherwise impossible Townsfolk information",
+      "passed": true
+    },
+    {
+      "name": "Xaan with zero Outsiders never poisons on Night 1",
+      "passed": true
+    },
+    {
+      "name": "Psychopath death is only compatible with an active Psychopath actor",
+      "passed": true
+    },
+    {
+      "name": "Psychopath kill record must have linked death and valid source",
+      "passed": true
+    },
+    {
+      "name": "Psychopath hiding through Day 1 incurs soft penalty only",
+      "passed": true
+    },
+    {
+      "name": "Widow notice and Mezepheles behavior change are soft contextual bonuses",
+      "passed": true
+    },
+    {
+      "name": "Organ Grinder hidden votes do not become false Flowergirl evidence",
+      "passed": true
+    },
+    {
+      "name": "Summoner quiet early Demon nights are positive but weak evidence",
+      "passed": true
+    },
+    {
+      "name": "Wizard and Wraith note data does not force impossible solver conclusions",
+      "passed": true
+    },
+    {
+      "name": "Xaan with two starting Outsiders poisons N2 and D2, not N1",
+      "passed": true
+    },
+    {
+      "name": "Every registered character is selectable in custom scripts, including all ten experimental Demons",
+      "passed": true
+    },
+    {
+      "name": "Every regular character and Traveller has a globally unique one-character symbol",
+      "passed": true
+    },
+    {
+      "name": "Only Choirboy and Huntsman add another character to a script",
+      "passed": true
+    },
+    {
+      "name": "Old saved scripts normalize exactly the two official addition dependencies",
+      "passed": true
+    },
+    {
+      "name": "King and Damsel do not require Choirboy and Huntsman respectively",
+      "passed": true
+    },
+    {
+      "name": "Only active and winning jinxes appear in the UI registry",
+      "passed": true
+    },
+    {
+      "name": "Jinxes are public script-level interactions, not proof of participating characters",
+      "passed": true
+    },
+    {
+      "name": "All three built-in scripts contain no experimental official jinx pair",
+      "passed": true
+    },
+    {
+      "name": "Retired Organ Grinder and Flowergirl jinx is not reintroduced",
+      "passed": true
+    },
+    {
+      "name": "All jinxes leave the old two automatic script additions unchanged",
+      "passed": true
+    },
+    {
+      "name": "King uses ordinary threshold unless Riot or Leviathan is in play",
+      "passed": true
+    },
+    {
+      "name": "Marionette-Huntsman jinx permits Damsel outsider even with nominal zero outsiders",
+      "passed": true
+    },
+    {
+      "name": "Marionette cannot believe they are Huntsman without Damsel actually in play",
+      "passed": true
+    },
+    {
+      "name": "Marionette-Huntsman outsider variant is reachable by normal sampler",
+      "passed": true
+    },
+    {
+      "name": "Boffin cannot give the forbidden Drunk ability",
+      "passed": true
+    },
+    {
+      "name": "Boffin may give Village Idiot ability with a spare token",
+      "passed": true
+    },
+    {
+      "name": "Existing Damsel, Spy and Widow interaction is registered explicitly",
+      "passed": true
+    },
+    {
+      "name": "Summoner/Pukka jinx permits the only legal N2 summon and preserves it on N3",
+      "passed": true
+    },
+    {
+      "name": "Summoner can still wait until N3 with Pukka on the script",
+      "passed": true
+    },
+    {
+      "name": "Lleech/Slayer jinx allows a Slayer shot to kill the poisoned host",
+      "passed": true
+    },
+    {
+      "name": "Alchemist/Spy jinx requires the real Spy if the Alchemist is given its ability",
+      "passed": true
+    },
+    {
+      "name": "Alchemist/Marionette jinx requires the real Marionette beside the Demon",
+      "passed": true
+    },
+    {
+      "name": "Alchemist/Mastermind jinx forbids an in-play Mastermind with its copied ability",
+      "passed": true
+    },
+    {
+      "name": "Active Djinn panel omits inert and Storyteller-only pairs",
+      "passed": true
+    },
+    {
+      "name": "Grandmother victory requires actual execution DEATH, not only an execution",
+      "passed": true
+    },
+    {
+      "name": "Grandmother victory can apply after the original grandchild changes alignment",
+      "passed": true
+    },
+    {
+      "name": "Soldier being executed after a Demon nomination can automatically win good",
+      "passed": true
+    },
+    {
+      "name": "Leviathan and Mayor win immediately after Day 5 is marked no-execution",
+      "passed": true
+    },
+    {
+      "name": "Riot-Mayor outcome depends on the living Riot count, not script composition",
+      "passed": true
+    },
+    {
+      "name": "Al-Hadikhia/Mastermind documented three-choice result changes actual winner",
+      "passed": true
+    },
+    {
+      "name": "Confirmed protected victim ends game only for compatible Demon nomination",
+      "passed": true
+    },
+    {
+      "name": "Recorded jinx victories survive import; unscripted and malformed records fail",
+      "passed": true
+    },
+    {
+      "name": "Alchemist copied Summoner setup has no real Demon and can be sampled",
+      "passed": true
+    },
+    {
+      "name": "Alchemist/Summoner dying before summoning creates an evil-win jinx world",
+      "passed": true
+    },
+    {
+      "name": "Lleech/Mastermind execution of host lets Lleech survive but lose power",
+      "passed": true
+    },
+    {
+      "name": "Recorded Al-Hadikhia/Mastermind result determines the completed solver world",
+      "passed": true
+    },
+    {
+      "name": "Leviathan/Mayor D5 no-execution win is resolved in actual timeline",
+      "passed": true
+    },
+    {
+      "name": "Alchemist/Summoner creates a Demon on the third night when healthy",
+      "passed": true
+    },
+    {
+      "name": "All eleven Experimental Outsiders are selectable with globally distinct kanji",
+      "passed": true
+    },
+    {
+      "name": "Puzzlemaster has one fixed drunk who can even be themselves",
+      "passed": true
+    },
+    {
+      "name": "Puzzlemaster may guess themselves, but not after a prior-night death",
+      "passed": true
+    },
+    {
+      "name": "Puzzlemaster correct guess shows true Demon, not arbitrary player",
+      "passed": true
+    },
+    {
+      "name": "Ogre alignment follows chosen evil seat without becoming a Minion",
+      "passed": true
+    },
+    {
+      "name": "Golem kills a non-Demon nominee if ability was actually active",
+      "passed": true
+    },
+    {
+      "name": "Zealot must vote with five living voters when public tally is complete",
+      "passed": true
+    },
+    {
+      "name": "Heretic reverses a normal good victory including when they are dead",
+      "passed": true
+    },
+    {
+      "name": "Heretic forbidden Djinn pairing is invalid but normal Heretic is legal",
+      "passed": true
+    },
+    {
+      "name": "Plague Doctor grants the Storyteller an ability, NOT an extra Minion player",
+      "passed": true
+    },
+    {
+      "name": "Politician suspicion raises a soft score without making that Outsider evil",
+      "passed": true
+    },
+    {
+      "name": "Storyteller-only Politician reward is recorded separately from team alignment",
+      "passed": true
+    },
+    {
+      "name": "Hatter death permits a confirmed change to an unused Minion character",
+      "passed": true
+    },
+    {
+      "name": "Hatter can change evil roles after a night death",
+      "passed": true
+    },
+    {
+      "name": "Plague Doctor death at night can grant the Storyteller a Minion ability",
+      "passed": true
+    },
+    {
+      "name": "DEVOUT THEISTS V6 screenshot has all 25 roles in the custom script catalog",
+      "passed": true
+    },
+    {
+      "name": "Snitch gives three confirmed out-of-play role bluffs to a Minion",
+      "passed": true
+    },
+    {
+      "name": "Outsider event save validation rejects impossible kinds, targets and duplicates",
+      "passed": true
+    },
+    {
+      "name": "Hermit setup can use zero or one fewer Outsiders without changing the number of evil players",
+      "passed": true
+    },
+    {
+      "name": "Trouble Brewing death menu does not offer Psychopath or unrelated Traveller causes",
+      "passed": true
+    },
+    {
+      "name": "Psychopath death cause appears only when the frozen current game script has Psychopath",
+      "passed": true
+    },
+    {
+      "name": "Travellers have special death causes only while the corresponding Traveller is active and alive",
+      "passed": true
+    },
+    {
+      "name": "Death reason history labels are retained independent of script restrictions",
+      "passed": true
+    },
+    {
+      "name": "Player death UI renders the context-filtered options, not the global catalog",
+      "passed": true
+    },
+    {
+      "name": "Auto-saved standard games reopen with all empty experimental records",
+      "passed": true
+    },
+    {
+      "name": "Empty optional role records are allowed but out-of-script actual records are not",
+      "passed": true
+    },
+    {
+      "name": "Continue reads a previously saved game after simulated Android WebView relaunch",
+      "passed": true
+    },
+    {
+      "name": "Active game saves immediately and when Android hides the WebView",
+      "passed": true
+    },
+    {
+      "name": "All 25 BMR characters have individual info/action timing records",
+      "passed": true
+    },
+    {
+      "name": "Night-only BMR characters do not accept D1, D2 or D3 as active-ability claim times",
+      "passed": true
+    },
+    {
+      "name": "BMR first-night info, continuous info and later-night active abilities are separate",
+      "passed": true
+    },
+    {
+      "name": "BMR roles distinguish night information and night ability categories",
+      "passed": true
+    },
+    {
+      "name": "BMR night starts and once-per-game records are available for all role-selected actions",
+      "passed": true
+    },
+    {
+      "name": "A healthy first-night Grandmother read identifies a good seat and its character",
+      "passed": true
+    },
+    {
+      "name": "Chambermaid night records accept 0, 1 and 2 and reject daytime or self-target reads",
+      "passed": true
+    },
+    {
+      "name": "Godfather first-night Outsider character information is recorded as a set and constrained",
+      "passed": true
+    },
+    {
+      "name": "BMR action records survive strict save validation and fail on impossible timing and target counts",
+      "passed": true
+    },
+    {
+      "name": "Courtier and Assassin may act once, Devil Advocate cannot repeat consecutive targets, Po must charge",
+      "passed": true
+    },
+    {
+      "name": "Both BMR info/report forms and self recorder filter ability timing",
+      "passed": true
+    },
+    {
+      "name": "Bad Moon Rising first-night Godfather outsider count allows exactly -1 or +1",
+      "passed": true
+    },
+    {
+      "name": "All Bad Moon Rising characters have their actual first/later-night wake schedule",
+      "passed": true
+    },
+    {
+      "name": "Chambermaid distinguishes guaranteed BMR waking from passive nonwaking",
+      "passed": true
+    },
+    {
+      "name": "Chambermaid reported ability rejects impossible wake counts but permits conditional ones",
+      "passed": true
+    },
+    {
+      "name": "Claim and script-maker UIs show Japanese BMR wake types; Godfather night action remains accessible",
+      "passed": true
+    },
+    {
+      "name": "Moonchild can only publicly choose on death day after recording death",
+      "passed": true
+    },
+    {
+      "name": "Zombuul night attack requires that nobody died the preceding day",
+      "passed": true
+    },
+    {
+      "name": "Grandmother and Chambermaid self information cannot be duplicated",
+      "passed": true
+    },
+    {
+      "name": "Grandmother first-night information survives an autosave and reopen",
+      "passed": true
+    },
+    {
+      "name": "BMR passive guidance is provided for all seven non-choosing passive roles",
+      "passed": true
+    }
+  ]
+}

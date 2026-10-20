@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "viewports": [
+    [
+      320,
+      640
+    ],
+    [
+      393,
+      851
+    ],
+    [
+      480,
+      960
+    ],
+    [
+      1280,
+      720
+    ]
+  ],
+  "checks": [
+    "demo import",
+    "generated orange and yellow badges",
+    "reason list excludes percentages",
+    "no horizontal overflow",
+    "corner controls inside viewport",
+    "no runtime errors"
+  ],
+  "harness": "Same isolated Chromium/React/Worker harness as ui-results.json."
+}
