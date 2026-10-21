@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 2,
+  "playerCount": 7,
+  "playset": "trouble_brewing",
+  "night": 1,
+  "playerNames": {
+    "1L": "直樹",
+    "1R": "花子"
+  },
+  "playerStatus": {
+    "self": {
+      "alive": true,
+      "deadVoteAvailable": true
+    },
+    "1L": {
+      "alive": true,
+      "deadVoteAvailable": true
+    },
+    "2L": {
+      "alive": true,
+      "deadVoteAvailable": true
+    },
+    "3L": {
+      "alive": true,
+      "deadVoteAvailable": true
+    },
+    "3R": {
+      "alive": true,
+      "deadVoteAvailable": true
+    },
+    "2R": {
+      "alive": true,
+      "deadVoteAvailable": true
+    },
+    "1R": {
+      "alive": true,
+      "deadVoteAvailable": true
+    }
+  },
+  "roleClaimLog": [],
+  "abilityClaimLog": [],
+  "deathLog": [],
+  "revivalLog": [],
+  "nominationLog": [],
+  "abilityTriggerLog": [],
+  "talkLog": [],
+  "selfRole": {
+    "shownRole": null
+  },
+  "selfInfoLog": [],
+  "selfActionLog": [],
+  "manualReads": {},
+  "completedNights": [],
+  "noExecutionDays": []
+}

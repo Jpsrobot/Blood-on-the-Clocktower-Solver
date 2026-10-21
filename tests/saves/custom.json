@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 2,
+  "playerCount": 7,
+  "playset": "custom:compatibility",
+  "night": 1,
+  "playerNames": {},
+  "playerStatus": {
+    "self": {
+      "alive": true,
+      "deadVoteAvailable": true
+    },
+    "1L": {
+      "alive": true,
+      "deadVoteAvailable": true
+    },
+    "2L": {
+      "alive": true,
+      "deadVoteAvailable": true
+    },
+    "3L": {
+      "alive": true,
+      "deadVoteAvailable": true
+    },
+    "3R": {
+      "alive": true,
+      "deadVoteAvailable": true
+    },
+    "2R": {
+      "alive": true,
+      "deadVoteAvailable": true
+    },
+    "1R": {
+      "alive": true,
+      "deadVoteAvailable": true
+    }
+  },
+  "roleClaimLog": [],
+  "abilityClaimLog": [],
+  "deathLog": [],
+  "revivalLog": [],
+  "nominationLog": [],
+  "abilityTriggerLog": [],
+  "talkLog": [],
+  "selfRole": {
+    "shownRole": null
+  },
+  "selfInfoLog": [],
+  "selfActionLog": [],
+  "manualReads": {},
+  "completedNights": [],
+  "noExecutionDays": [],
+  "scriptName": "保存互換性",
+  "scriptRoleIds": [
+    "washerwoman",
+    "chef",
+    "empath",
+    "monk",
+    "soldier",
+    "mayor",
+    "poisoner",
+    "imp",
+    "recluse"
+  ]
+}
