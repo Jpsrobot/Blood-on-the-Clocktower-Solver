@@ -105,7 +105,7 @@ textarea { min-height:90px; resize:vertical; }
 .reason-list small { display:block; color:#777; font-size:11px; }
 .reason-kind { display:inline-block; color:#aaa; border:1px solid #494949; padding:0 5px; font-size:10px; border-radius:4px; margin-right:6px; }
 .border-red { border-left:3px solid #f25464; }.border-orange { border-left:3px solid #f29b4b; }.border-yellow { border-left:3px solid #e5c95c; }.border-blue { border-left:3px solid #6cacf0; }.border-green { border-left:3px solid #58c28d; }
-.metrics-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:7px; margin:12px 0; }
+.metrics-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:7px; margin:12px 0; }
 .metrics-grid>span { display:flex; flex-direction:column; background:#1c1c1c; border:1px solid #444; border-radius:10px; padding:10px 6px; font-size:11px; text-align:center; }
 .metrics-grid strong { font-size:23px; margin-top:7px; }
 .metric-line { color:#bdbdbd; font-size:13px; line-height:1.6; }

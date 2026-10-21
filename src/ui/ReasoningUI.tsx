@@ -44,11 +44,11 @@ export function Sheet({title,onClose,children}:{title:string;onClose:()=>void;ch
 }
 export function PlayerSummary({g,p,r,e,onOpen}:{g:GameSnapshot;p:string;r:SearchResult|null;e:EvidenceAnalysis;onOpen:()=>void}){
  const s=r?.unique?r.players[p]:undefined,ev=e.players[p];
- return <button className="player-summary" onClick={onOpen}><span>{L.sampleLabel}</span><strong>{L.evil} {pct(s?.evil)} / {L.demon} {pct(s?.demon)} / {L.drunk} {pct(s?.drunk)}</strong><small>{L.goodPoints} {ev?.good.toFixed(1)??'0'} / {L.evilPoints} {ev?.evil.toFixed(1)??'0'} / {L.inconsistent} {ev?.inconsistency??0}</small><span>{person(g,p)} {'\u2014'} {L.reasons}</span></button>;
+ return <button className="player-summary" onClick={onOpen}><span>{L.sampleLabel}</span><strong>悪陣営 {pct(s?.evil)} / 手下 {pct(s?.minion)} / デーモン {pct(s?.demon)} / 酔い {pct(s?.drunk)}</strong><small>{L.goodPoints} {ev?.good.toFixed(1)??'0'} / {L.evilPoints} {ev?.evil.toFixed(1)??'0'} / {L.inconsistent} {ev?.inconsistency??0}</small><span>{person(g,p)} {'\u2014'} {L.reasons}</span></button>;
 }
 export function NominationCard({g,r,p,nominator='self',compact=false}:{g:GameSnapshot;r:SearchResult|null;p:string;nominator?:string;compact?:boolean}){
  const a=nominationAdvice(g,r,p,nominator);
- return <section className={`analysis-card verdict-${a.verdict}`}><h3>{person(g,p)} {'\u2014'} {L[a.verdict]}</h3>{r?.unique!==0&&r&&<p className="metric-line">{L.evil}: {pct(r.players[p]?.evil)} / {L.demon}: {pct(r.players[p]?.demon)} / {L.drunk}: {pct(r.players[p]?.drunk)}</p>}<details open={!compact}><summary>{L.reasons}</summary><ReasonList reasons={a.reasons} g={g}/>{a.risks.length>0&&<><h4>{L.risk}</h4><ReasonList reasons={a.risks} g={g}/></>}</details></section>;
+ return <section className={`analysis-card verdict-${a.verdict}`}><h3>{person(g,p)} {'\u2014'} {L[a.verdict]}</h3>{r?.unique!==0&&r&&<p className="metric-line">悪陣営: {pct(r.players[p]?.evil)} / 手下: {pct(r.players[p]?.minion)} / デーモン: {pct(r.players[p]?.demon)} / 酔い: {pct(r.players[p]?.drunk)}</p>}<details open={!compact}><summary>{L.reasons}</summary><ReasonList reasons={a.reasons} g={g}/>{a.risks.length>0&&<><h4>{L.risk}</h4><ReasonList reasons={a.risks} g={g}/></>}</details></section>;
 }
 export function AdvicePanel({g,r}:{g:GameSnapshot;r:SearchResult|null}){
  const a=recommendations(g,r);
@@ -120,6 +120,7 @@ export function AnalysisPanel({g,e,query:q,player,initialTab='overview',onClose,
  const events=LOG_KEYS.flatMap(key=>(g[key]??[]).map(ev=>({key,event:ev}))).sort((a,b)=>compareEvents(b.event,a.event));
  return <Sheet title={p?`${person(g,p)} / ${L.analysis}`:L.analysis} onClose={onClose}>
   <p className="sample-caution">{L.sampleCaution}</p>
+  <p className="panel-note">悪陣営は現在の陣営、手下・デーモンは生死を問わない現在の役職の割合です。初期配役は開始時にその役職がいた割合です。</p>
   <div className="analysis-tabs">{(Object.keys(titles)as(keyof typeof titles)[]).map(t=><button key={t} className={tab===t?'selected':''} onClick={()=>setTab(t)}>{titles[t]}</button>)}</div>
   {q.status==='running'&&<p role="status" className="panel-note">{L.searching} {q.progress.checked} {'\u691c\u8a0e'} / {q.progress.unique} {'\u5019\u88dc'}</p>}
   {q.error&&<p role="alert" className="error-banner">探索中にエラーが発生しました。もう一度実行してください。</p>}
@@ -233,15 +234,15 @@ export function AnalysisPanel({g,e,query:q,player,initialTab='overview',onClose,
     <p className="panel-note">3日目に手下がライオットへ変わり、指名された相手が死亡し、その相手が連続で指名します。3日目以降に確認されている場合、推理を自動で開き、専用の陣営対比を表示します。</p>
    </section>}
    {p&&ev?<>
-    <div className="metrics-grid"><span>{L.evil}<strong>{pct(r?.unique?r.players[p]?.evil:undefined)}</strong></span><span>{L.demon}<strong>{pct(r?.unique?r.players[p]?.demon:undefined)}</strong></span><span>{L.drunk}<strong>{pct(r?.unique?r.players[p]?.drunk:undefined)}</strong></span></div>
+    <div className="metrics-grid"><span>悪陣営<strong>{pct(r?.unique?r.players[p]?.evil:undefined)}</strong></span><span>手下<strong>{pct(r?.unique?r.players[p]?.minion:undefined)}</strong></span><span>デーモン<strong>{pct(r?.unique?r.players[p]?.demon:undefined)}</strong></span><span>酔い<strong>{pct(r?.unique?r.players[p]?.drunk:undefined)}</strong></span></div>
     <p className="metric-line">{L.goodPoints}: {ev.good.toFixed(1)} / {L.evilPoints}: {ev.evil.toFixed(1)}</p><p className="panel-note">{L.countsHelp}</p>
     {ev.warnings.map((w,i)=><section className={`analysis-card border-${w.color}`} key={i}><h3>{warningLabel[w.color]} {w.cycle?`N${w.cycle}`:''}</h3><ReasonList reasons={w.reasons} g={g}/></section>)}
     <h3>{L.reasons}</h3><ReasonList reasons={ev.reasons} g={g}/>
     {r?.examples[p]&&(['good','evil'] as const).map(alignment=>{const w=r.examples[p][alignment];return <details className="analysis-card" key={alignment}><summary>{L[alignment]}{'\u3068\u3057\u3066\u306e\u8aac\u660e\u4f8b'}</summary>{w?<><p>{person(g,p)}: {ROLES[w.current[p]].symbol} / {L[w.currentAlignment[p]]}</p><ul className="reason-list">{worldReasons(w,g).map((text,i)=><li key={i}>{text}</li>)}</ul></>:<p className="panel-note">{'\u3053\u306e\u63a2\u7d22\u3067\u306f\u4f8b\u3092\u898b\u3064\u3051\u3089\u308c\u307e\u305b\u3093\u3067\u3057\u305f\u3002\u5168\u5019\u88dc\u306b\u3064\u3044\u3066\u306e\u4e0d\u53ef\u80fd\u8a3c\u660e\u3067\u306f\u3042\u308a\u307e\u305b\u3093\u3002'}</p>}</details>;})}
-    {r&&r.unique>0&&<section className="analysis-card"><h3>{L.role} / {L.sampleLabel}</h3><div className="role-shares">{Object.entries(r.players[p]?.roles??{}).sort((a,b)=>(b[1]??0)-(a[1]??0)).slice(0,8).map(([role,x])=><span key={role}>{ROLES[role as RoleId].symbol} {pct(x)}</span>)}</div></section>}
+    {r&&r.unique>0&&<section className="analysis-card"><h3>現在の役職 / {L.sampleLabel}</h3><div className="role-shares">{Object.entries(r.players[p]?.roles??{}).sort((a,b)=>(b[1]??0)-(a[1]??0)).slice(0,8).map(([role,x])=><span key={role}>{ROLES[role as RoleId].symbol} {pct(x)}</span>)}</div></section>}
    </>:<>
     <section className="analysis-card"><h3>{'\u914d\u5f79'}</h3><p>{Object.entries(setupCounts(g.playerCount)).map(([_t,num],i)=>`${L.nominalTypes[i]} ${num}`).join(' / ')}</p><p className="panel-note">{'\u7235\u304c\u3044\u308b\u914d\u5f79\u306f\u753a\u4eba\u3092\u4e8c\u4eba\u6e1b\u3089\u3057\u3001\u30a2\u30a6\u30c8\u30b5\u30a4\u30c0\u30fc\u3092\u4e8c\u4eba\u5897\u3084\u3057\u307e\u3059\u3002'}</p></section>
-    {(['poisoner','spy','scarlet_woman','baron','fang_gu','vigormortis','drunk','mastermind','lord_of_typhon','kazali','legion','leviathan','lil_monsta','lleech','al_hadikhia','ojo','riot','yaggababble','boffin','boomdandy','fearmonger','harpy','marionette','mezepheles','organ_grinder','psychopath','summoner','widow','wizard','wraith','xaan']as RoleId[]).filter(role=>getSnapshotScriptRoleIds(g).includes(role)).map(role=><section className="analysis-card" key={role}><h3>{ROLES[role].symbol} {ROLES[role].name} <span className="metric-inline">{((role==='leviathan' && !g.leviathanConfirmed && g.selfRole.shownRole!=='leviathan')||(role==='al_hadikhia' && !g.alHadikhiaConfirmed && g.selfRole.shownRole!=='al_hadikhia')) ? '0%' : pct(r?.unique?r.presence[role]:undefined)}</span></h3><p className="panel-note">{'\u50be\u5411\u70b9'}: {(e.global[role]?.points??0).toFixed(1)}</p><ReasonList reasons={e.global[role]?.reasons??[]} g={g}/></section>)}
+    {getSnapshotScriptRoleIds(g).filter(role=>ROLES[role].type==='minion'||ROLES[role].type==='demon'||role==='drunk').map(role=><section className="analysis-card" key={role}><h3>{ROLES[role].symbol} {ROLES[role].name} <span className="metric-inline">初期配役: {pct(r?.unique?(r.presence[role]??0):undefined)}</span></h3><p className="panel-note">{'\u50be\u5411\u70b9'}: {(e.global[role]?.points??0).toFixed(1)}</p><ReasonList reasons={e.global[role]?.reasons??[]} g={g}/></section>)}
     {getSnapshotScriptRoleIds(g).some(id=>['lord_of_typhon','kazali','legion','lil_monsta','lleech','ojo','yaggababble'].includes(id)) && <section className="analysis-card">
      <h3>特殊デーモンの傾向（弱い手掛かり）</h3>
      {(()=>{const s=demonPatternSignals(g);return <>

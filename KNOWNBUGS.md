@@ -1,11 +1,11 @@
 # Known issues and verification status
 
-This records the refactoring baseline; it does not declare reported bugs fixed.
+This records the refactoring baseline and subsequent verified corrections.
 
 ## Reported in PROGRESS.md; needs behavior-level reproduction
 
 - BMR, S&V and experimental role implementation is incomplete.
-- Minion/Demon percentages and their listing in the reasoning menu need review.
+- Minion/Demon percentage data and listing corrected on `fix/role-probabilities`; see `docs/PROBABILITY_DISPLAY_FIX.md` for definitions, tests and remaining device-verification limits.
 - The continue button has been reported missing or unreliable.
 
 Later documentation describes save/resume and BMR timing fixes. The current

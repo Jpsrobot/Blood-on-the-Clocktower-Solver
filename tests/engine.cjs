@@ -23,4 +23,5 @@ require('./suites/death-menu.cjs');
 require('./suites/save-resume.cjs');
 require('./suites/bmr-timing.cjs');
 require('./suites/save-fixtures.cjs');
+require('./suites/probabilities.cjs');
 finish();

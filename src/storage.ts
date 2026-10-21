@@ -521,7 +521,7 @@ function validateGameLogEntry(value: unknown): value is GameLogEntry {
   if(value.reasoning===null)return true;
   const r=value.reasoning;if(!record(r)||!Number.isFinite(r.generatedAt)||!Number.isFinite(r.checked)||!Number.isFinite(r.unique)||!Number.isFinite(r.effectiveWorlds)||typeof r.meta!=="boolean")return false;
   if(!record(r.playerShares)||!record(r.presence)||!Array.isArray(r.topWorlds))return false;
-  for(const share of Object.values(r.playerShares)){if(!record(share)||!Number.isFinite(share.evil)||!Number.isFinite(share.demon)||!Number.isFinite(share.drunk))return false;}
+  for(const share of Object.values(r.playerShares)){if(!record(share)||!Number.isFinite(share.evil)||(share.minion!==undefined&&!Number.isFinite(share.minion))||!Number.isFinite(share.demon)||!Number.isFinite(share.drunk))return false;}
   return true;
 }
 
@@ -535,7 +535,7 @@ export function createGameLogEntry(g:GameSnapshot,result:SearchResult|null,statu
   const savedAt=Date.now();
   const reasoning=result?{
     generatedAt:savedAt,checked:result.checked,unique:result.unique,effectiveWorlds:result.effectiveWorlds,meta:result.meta,
-    playerShares:Object.fromEntries(Object.entries(result.players).map(([p,s])=>[p,{evil:s.evil,demon:s.demon,drunk:s.drunk}])),
+    playerShares:Object.fromEntries(Object.entries(result.players).map(([p,s])=>[p,{evil:s.evil,minion:s.minion,demon:s.demon,drunk:s.drunk}])),
     presence:{...result.presence},
     topWorlds:result.worlds.slice(0,8).map(w=>({initial:{...w.initial},current:{...w.current},initialAlignment:{...w.initialAlignment},currentAlignment:{...w.currentAlignment},requiredPoison:{...w.requiredPoison},assumptions:[...w.assumptions],changes:w.changes.map(c=>({...c}))})),
   }:null;
