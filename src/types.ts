@@ -698,7 +698,8 @@ export type GameLogReasoningSummary = {
   unique: number;
   effectiveWorlds: number;
   meta: boolean;
-  playerShares: Record<string, { evil: number; demon: number; drunk: number }>;
+  /** minion is absent in older archived summaries; resume recomputes all shares. */
+  playerShares: Record<string, { evil: number; minion?: number; demon: number; drunk: number }>;
   presence: Partial<Record<RoleId, number>>;
   topWorlds: Array<{
     initial: Record<string, RoleId>;

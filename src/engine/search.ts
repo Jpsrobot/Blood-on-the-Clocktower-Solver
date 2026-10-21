@@ -373,7 +373,7 @@ export function runSearch(g:GameSnapshot, options:Partial<SearchOptions>={},prog
     if(worlds.length){accepted++;candidates.set(key,worlds);}
     if(progress&&checked%100===0)progress(checked,candidates.size);
   }
-  const shares:Record<string,PlayerShare>=Object.fromEntries(ps.map(p=>[p,{evil:0,demon:0,drunk:0,roles:{},poison:{}}]));
+  const shares:Record<string,PlayerShare>=Object.fromEntries(ps.map(p=>[p,{evil:0,minion:0,demon:0,drunk:0,roles:{},poison:{}}]));
   const result:SearchResult={kind:'sample',checked,accepted,unique:candidates.size,elapsedMs:Date.now()-start,exhaustive:false,beamWidth:opts.beamWidth,seed:opts.seed,meta:opts.meta,effectiveWorlds:0,truncated:checked<opts.attempts,players:shares,presence:{},info:{},worlds:[],examples:{},issues:[...issues,...evidence.issues]};
   const weighted:{w:HistoryWorld;log:number}[]=[];
   for(const histories of candidates.values())for(const w of histories){
@@ -416,7 +416,8 @@ export function runSearch(g:GameSnapshot, options:Partial<SearchOptions>={},prog
     for(const p of ps){
       const s=shares[p],r=w.current[p];
       if(w.currentAlignment[p] === "evil")s.evil+=weight;
-      if(ROLES[r].type==='demon'&&w.alive.includes(p))s.demon+=weight;
+      if(ROLES[r].type==='minion')s.minion+=weight;
+      if(ROLES[r].type==='demon')s.demon+=weight;
       if(w.lleechHost===p)for(let night=1;night<=g.night;night++)s.poison[night]=(s.poison[night]??0)+weight;
       if(w.current[p]==='drunk'||w.villageIdiotDrunk===p||w.puzzlemasterDrunk===p)s.drunk+=weight;
       s.roles[r]=(s.roles[r]??0)+weight;
@@ -429,7 +430,7 @@ export function runSearch(g:GameSnapshot, options:Partial<SearchOptions>={},prog
   }
   for(const w of assignWeights.values())sq+=w*w;
   result.effectiveWorlds=total*total/sq;
-  for(const s of Object.values(shares)){s.evil/=total;s.demon/=total;s.drunk/=total;for(const r of Object.keys(s.roles)as RoleId[])s.roles[r]!/=total;for(const n of Object.keys(s.poison))s.poison[Number(n)]/=total;}
+  for(const s of Object.values(shares)){s.evil/=total;s.minion/=total;s.demon/=total;s.drunk/=total;for(const r of Object.keys(s.roles)as RoleId[])s.roles[r]!/=total;for(const n of Object.keys(s.poison))s.poison[Number(n)]/=total;}
   for(const r of Object.keys(result.presence)as RoleId[])result.presence[r]!/=total;
   result.legionConditionalSeats=legionTotal>0?Object.fromEntries(ps.map(p=>[p,legionSeats[p]/legionTotal])):undefined;
   result.lleechHostConditionalSeats=lleechTotal>0?Object.fromEntries(ps.map(p=>[p,lleechHosts[p]/lleechTotal])):undefined;

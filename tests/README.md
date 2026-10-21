@@ -54,3 +54,13 @@ and relevant browser flows. Compare lint against the recorded existing baseline
 (69 errors, 4 warnings); do not silently disable rules or fix unrelated behavior.
 Maintain original Japanese strings, role identifiers/symbols and iteration order,
 save keys/schema, event linkage and solver ordering. Bug fixes are separate work.
+
+
+## Probability regression coverage
+
+`node tests/run.cjs` also runs `suites/probabilities.cjs`: real weighted search,
+character/alignment transformations, save compatibility, React server-rendered
+percentage displays, the worker message handler, and hook lifecycle tests using
+controlled workers/timers. `source-loader.cjs` transpiles the TS/TSX test entries
+with the project's installed TypeScript and reuses the compiled engine.
+These checks require no browser download and are not browser/device tests.

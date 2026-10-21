@@ -100,12 +100,16 @@ export type HistoryWorld = {
 };
 export type SearchOptions = { attempts: number; seed: number; maxMillis: number; beamWidth: number; meta: boolean; worldLimit: number };
 export const DEFAULT_SEARCH_OPTIONS: SearchOptions = { attempts: 2400, seed: 71347, maxMillis: 4500, beamWidth: 3, meta: false, worldLimit: 40 };
-export type PlayerShare = { evil: number; demon: number; drunk: number; roles: Partial<Record<RoleId, number>>; poison: Record<number, number> };
+/** Weighted current alignment/character shares, including dead players.
+ * roles describes current characters; presence below describes initial setup. */
+export type PlayerShare = { evil: number; minion: number; demon: number; drunk: number; roles: Partial<Record<RoleId, number>>; poison: Record<number, number> };
 export type SearchResult = {
   kind: "sample"; checked: number; accepted: number; unique: number; elapsedMs: number;
   exhaustive: false; beamWidth: number; seed: number; meta: boolean;
   effectiveWorlds: number; truncated: boolean;
-  players: Record<string, PlayerShare>; presence: Partial<Record<RoleId, number>>;
+  players: Record<string, PlayerShare>;
+  /** Chance a character was in the initial setup, counted once per world. */
+  presence: Partial<Record<RoleId, number>>;
   info: Record<number, { works: number; registration: number; poison: number; drunk: number; vortox: number; bluff: number; lie: number; missing: number }>;
   worlds: HistoryWorld[];
   /** Normalized search weights aligned with `worlds`. Optional for backward compatibility. */
