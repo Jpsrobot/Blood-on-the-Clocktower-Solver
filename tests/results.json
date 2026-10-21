@@ -1,6 +1,6 @@
 {
-  "passed": 407,
-  "total": 407,
+  "passed": 411,
+  "total": 411,
   "tests": [
     {
       "name": "Seat ring and counts for every supported game size",
@@ -1628,6 +1628,22 @@
     },
     {
       "name": "BMR passive guidance is provided for all seven non-choosing passive roles",
+      "passed": true
+    },
+    {
+      "name": "Baseline tb-legacy save roundtrips without losing fields",
+      "passed": true
+    },
+    {
+      "name": "Baseline bmr-grandmother save roundtrips without losing fields",
+      "passed": true
+    },
+    {
+      "name": "Baseline snv save roundtrips without losing fields",
+      "passed": true
+    },
+    {
+      "name": "Baseline custom save roundtrips without losing fields",
       "passed": true
     }
   ]

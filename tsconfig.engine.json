@@ -1,1 +1,38 @@
-{"compilerOptions":{"target":"ES2022","module":"CommonJS","moduleResolution":"Node","strict":true,"noUnusedLocals":true,"noUnusedParameters":true,"esModuleInterop":true,"outDir":".engine-test","lib":["ES2022","DOM"]},"include":["src/roles.ts","src/jinxes.ts","src/types.ts","src/deathReasons.ts","src/storage.ts","src/engine/game.ts","src/engine/model.ts","src/engine/mechanics.ts","src/engine/evidence.ts","src/engine/search.ts","src/engine/demonVariants.ts","src/engine/specialDemons.ts","src/engine/spyBluff.ts","src/engine/minionStrategy.ts","src/engine/advice.ts","src/engine/travellerAlignment.ts","src/engine/travellerVotes.ts","src/engine/travellerMechanics.ts"]}
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "esModuleInterop": true,
+    "outDir": ".engine-test",
+    "lib": [
+      "ES2022",
+      "DOM"
+    ],
+    "rootDir": "src",
+    "ignoreDeprecations": "6.0"
+  },
+  "include": [
+    "src/roles.ts",
+    "src/jinxes.ts",
+    "src/types.ts",
+    "src/deathReasons.ts",
+    "src/storage.ts",
+    "src/engine/game.ts",
+    "src/engine/model.ts",
+    "src/engine/mechanics.ts",
+    "src/engine/evidence.ts",
+    "src/engine/search.ts",
+    "src/engine/demonVariants.ts",
+    "src/engine/specialDemons.ts",
+    "src/engine/spyBluff.ts",
+    "src/engine/minionStrategy.ts",
+    "src/engine/advice.ts",
+    "src/engine/travellerAlignment.ts",
+    "src/engine/travellerVotes.ts",
+    "src/engine/travellerMechanics.ts"
+  ]
+}
