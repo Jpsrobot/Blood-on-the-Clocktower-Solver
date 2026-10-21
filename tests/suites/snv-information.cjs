@@ -242,3 +242,90 @@ test('Snapshot validation accepts the new Townsfolk and Outsider records',()=>{
   g.deathLog=[{id:625,playerId:'3L',when:'D1',reason:'storyteller',sourceRoleId:'mutant',isExecution:true}];
   assert(validateSnapshot(g));
 });
+
+function philosopherSnakeGame(demon = 'imp') {
+  const g = game(7);
+  g.playset = 'custom:philosopher-snake';
+  g.night = 2;
+  g.scriptRoleIds = ['philosopher', 'snake_charmer', 'dreamer', 'juggler', 'flowergirl', 'oracle', 'witch', demon];
+  g.selfRole.shownRole = 'philosopher';
+  g.selfActionLog = [
+    { id: 9100, roleId: 'philosopher', when: 'N1', gainedRole: 'snake_charmer' },
+    { id: 9101, roleId: 'snake_charmer', when: 'N1', target: '1R', swapped: true, newDemonRole: demon },
+  ];
+  const initial = { self: 'philosopher', '1L': 'dreamer', '2L': 'juggler', '3L': 'flowergirl', '3R': 'oracle', '2R': 'witch', '1R': demon };
+  return { g, initial };
+}
+
+test('Philosopher Snake Charmer swaps actual characters and keeps the former Demon poisoned on later nights', () => {
+  const { g, initial } = philosopherSnakeGame();
+  const worlds = evaluateAssignment(initial, g);
+  assert(worlds.length > 0);
+  for (const w of worlds) {
+    assert.equal(w.current.self, 'imp');
+    assert.equal(w.current['1R'], 'philosopher');
+    assert.equal(w.currentAlignment.self, 'evil');
+    assert.equal(w.currentAlignment['1R'], 'good');
+    assert(w.permanentPoison.includes('1R'));
+    assert.equal(w.philosopherAbility, null);
+  }
+});
+
+test('Juggler replays the actual Philosopher character after a copied Snake Charmer swap', () => {
+  const { g, initial } = philosopherSnakeGame();
+  g.abilityClaimLog = [{ id: 9102, playerId: '2L', sourcePlayerId: '2L', roleId: 'juggler', when: 'N2', targets: [], result: null,
+    structured: { kind: 'juggler', guessDay: 'D1', guesses: [{ player: '1R', roleId: 'philosopher' }], number: 1 }, visibility: 'public', recipients: [] }];
+  const worlds = evaluateAssignment(initial, g);
+  assert(worlds.length > 0);
+  assert(worlds.every(w => w.info[9102] === 'works'));
+  g.abilityClaimLog[0].structured.number = 0;
+  const falseWorlds = evaluateAssignment(initial, g);
+  assert(falseWorlds.length > 0);
+  assert(falseWorlds.every(w => w.info[9102] === 'lie'));
+});
+
+test('A saved copied Snake Charmer swap replays correctly and removing it restores the gained ability', () => {
+  const { saveSnapshot, loadSnapshot, deleteEventGroup } = require('../fixtures.cjs');
+  const { g, initial } = philosopherSnakeGame();
+  const previous = global.localStorage;
+  const entries = new Map();
+  global.localStorage = { getItem: key => entries.get(key) ?? null, setItem: (key, value) => entries.set(key, String(value)), removeItem: key => entries.delete(key) };
+  try {
+    assert(validateSnapshot(g));
+    assert(saveSnapshot(g));
+    const loaded = loadSnapshot();
+    assert.deepEqual(loaded, g);
+    const worlds = evaluateAssignment(initial, loaded);
+    assert(worlds.length > 0);
+    assert(worlds.every(w => w.current['1R'] === 'philosopher'));
+    const undone = deleteEventGroup(loaded, 'selfActionLog', 9101);
+    assert(validateSnapshot(undone));
+    const restored = evaluateAssignment(initial, undone);
+    assert(restored.length > 0);
+    assert(restored.every(w => w.current.self === 'philosopher' && w.current['1R'] === 'imp' && w.philosopherAbility === 'snake_charmer' && !w.permanentPoison.includes('1R')));
+  } finally { global.localStorage = previous; }
+});
+
+for (const demon of ['vortox', 'no_dashii']) {
+  test(`Philosopher Snake Charmer transfers ${demon} without replacing character with ability`, () => {
+    const { g, initial } = philosopherSnakeGame(demon);
+    // Keep the Philosopher away from No Dashii's nearest Townsfolk, so the
+    // gained ability and swap are healthy. The old Juggler seat holds the Demon.
+    initial['1R'] = 'juggler';
+    initial['2L'] = demon;
+    g.selfActionLog[1].target = '2L';
+    const worlds = evaluateAssignment(initial, g);
+    assert(worlds.length > 0);
+    assert(worlds.every(w => w.current.self === demon && w.current['2L'] === 'philosopher' && w.permanentPoison.includes('2L')));
+  });
+}
+
+test('Philosopher cannot swap without acquiring Snake Charmer or decline a healthy Demon swap', () => {
+  const { g, initial } = philosopherSnakeGame();
+  const noAbility = structuredClone(g);
+  noAbility.selfActionLog.shift();
+  assert.equal(evaluateAssignment(initial, noAbility).length, 0);
+  g.selfActionLog[1].swapped = false;
+  g.selfActionLog[1].newDemonRole = null;
+  assert.equal(evaluateAssignment(initial, g).length, 0);
+});

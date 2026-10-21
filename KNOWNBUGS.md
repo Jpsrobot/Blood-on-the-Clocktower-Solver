@@ -29,3 +29,14 @@ those limitations visible; passing regression tests is not full rules certificat
 - New browser harness is awaiting its first complete run: the environment's
   Chromium download returned invalid ZIP archives. Physical Android lifecycle
   testing remains outstanding.
+
+## S&V corrective audit (2026-10-21)
+
+See [the 25-role status and timing checklist](docs/SNV_AUDIT_2026-10.md).
+The Philosopher/Snake Charmer swap now gives the former Demon the actual
+Philosopher character, including information/advisor history replay. Save data
+format is unchanged. Six new regressions cover the correction and related paths.
+This does not close the general S&V implementation issue: shared acquired-ability
+timing, exact Barber swaps, Twin re-pairing, structured Artist deduction and
+complete multi-source interactions remain outstanding. Existing role metadata
+marked `full` should not be read as certification of every interaction.

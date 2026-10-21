@@ -253,7 +253,11 @@ function roleStateAt(world: HistoryWorld, when: string): Record<string, RoleId> 
   for (const change of changes) {
     if (phaseIndex(change.when) > phaseIndex(when)) break;
     if (change.kind === "pit_hag" || change.kind === "cacklejack" || change.kind === "engineer" || change.kind === "farmer") roles[change.playerId] = change.toRole;
-    else if (change.kind === "snake_charmer") { roles[change.snake] = change.demonRole; roles[change.demon] = "snake_charmer"; }
+    else if (change.kind === "snake_charmer") {
+      const snakeRole = roles[change.snake];
+      roles[change.snake] = change.demonRole;
+      roles[change.demon] = snakeRole;
+    }
     else if (change.kind === "fang_gu") roles[change.newDemon] = "fang_gu";
     else if (change.kind === "scarlet" || change.kind === "starpass") roles[change.to] = "imp";
   }
