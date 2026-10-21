@@ -513,7 +513,14 @@ function rolesAtPhase(w: HistoryWorld, when: string): Record<string, RoleId> {
   for (const change of w.changes) {
     if (phaseIndex(change.when) > cutoff) continue;
     if (change.kind === "pit_hag" || change.kind === "cacklejack" || change.kind === "engineer" || change.kind === "farmer" || change.kind === "huntsman" || change.kind === "summoner" || change.kind === "hatter") roles[change.playerId] = change.toRole;
-    else if (change.kind === "snake_charmer") { roles[change.snake] = change.demonRole; roles[change.demon] = "snake_charmer"; }
+    else if (change.kind === "snake_charmer") {
+      // Swap characters, not ability names: a Philosopher stays a Philosopher
+      // until this swap. Derive its character from the preceding history so
+      // existing saved events need no additional field or migration.
+      const snakeRole = roles[change.snake];
+      roles[change.snake] = change.demonRole;
+      roles[change.demon] = snakeRole;
+    }
     else if (change.kind === "fang_gu") roles[change.newDemon] = "fang_gu";
     else if (change.kind === "scarlet" || change.kind === "starpass") roles[change.to] = "imp";
   }
@@ -768,7 +775,7 @@ function processSnakeCharmerAction(
   const snakeAlignment = next.currentAlignment.self;
   const demonAlignment = next.currentAlignment[action.target];
   next.current.self = targetRole;
-  next.current[action.target] = "snake_charmer";
+  next.current[action.target] = w.current.self;
   next.currentAlignment.self = demonAlignment;
   next.currentAlignment[action.target] = snakeAlignment;
   if (!next.permanentPoison.includes(action.target)) next.permanentPoison.push(action.target);
